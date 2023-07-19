@@ -1,5 +1,7 @@
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class FirstNonRepeatedCharacter {
 	
@@ -7,6 +9,8 @@ public class FirstNonRepeatedCharacter {
 		String str = "Hello Hello World!!!";
 		System.out.printf("\nNon-repeating character is '%s'",
 				firstNonRepeatedCharacter(str));
+		System.out.printf("\nNon-repeating character is '%s'",
+				firstNonRepeatedCharacter2(str));
 	}
 	
 	/* *
@@ -28,5 +32,13 @@ public class FirstNonRepeatedCharacter {
 			}
 		}
 		return Character.MIN_VALUE;
+	}
+	
+	public static String firstNonRepeatedCharacter2(String str) {
+		LinkedHashMap<Integer, Long> chs = str.codePoints().boxed()
+				.collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()));
+		Integer cp = chs.entrySet().stream().filter(e -> e.getValue() == 1L)
+				.findFirst().map(Map.Entry::getKey).orElse((int) Character.MIN_VALUE);
+		return String.valueOf(Character.toChars(cp));
 	}
 }
