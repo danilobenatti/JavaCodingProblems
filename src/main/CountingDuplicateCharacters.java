@@ -1,3 +1,5 @@
+package main;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -6,11 +8,11 @@ public class CountingDuplicateCharacters {
 	
 	public static void main(String[] args) {
 		String str = "Hello World!!!";
-		System.out.printf("\nmap1 = %s", countDuplicateCharacters1(str));
-		System.out.printf("\nmap2 = %s", countDuplicateCharacters2(str));
-		System.out.printf("\nmap3 = %s", countDuplicateCharacters3(str));
-		System.out.printf("\nmap4 = %s", countDuplicateCharacters4(str));
-		System.out.printf("\nmap5 = %s", countDuplicateCharacters5(str));
+		System.out.printf("%nmap1 = %s", countDuplicateCharacters1(str));
+		System.out.printf("%nmap2 = %s", countDuplicateCharacters2(str));
+		System.out.printf("%nmap3 = %s", countDuplicateCharacters3(str));
+		System.out.printf("%nmap4 = %s", countDuplicateCharacters4(str));
+		System.out.printf("%nmap5 = %s", countDuplicateCharacters5(str));
 	}
 	
 	/* *
@@ -20,7 +22,7 @@ public class CountingDuplicateCharacters {
 	public static Map<Character, Integer> countDuplicateCharacters1(String str) {
 		
 		Map<Character, Integer> result = new HashMap<>();
-		// for (char ch: str.toCharArray()) { ... }
+		
 		for (int i = 0; i < str.length(); i++) {
 			char ch = str.charAt(i);
 			result.compute(ch, (k, v) -> (v == null) ? 1 : ++v);

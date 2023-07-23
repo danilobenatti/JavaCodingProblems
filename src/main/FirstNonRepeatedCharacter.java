@@ -1,3 +1,5 @@
+package main;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.function.Function;
@@ -7,9 +9,9 @@ public class FirstNonRepeatedCharacter {
 	
 	public static void main(String[] args) {
 		String str = "Hello Hello World!!!";
-		System.out.printf("\nNon-repeating character is '%s'",
+		System.out.printf("%nNon-repeating character is '%s'",
 				firstNonRepeatedCharacter(str));
-		System.out.printf("\nNon-repeating character is '%s'",
+		System.out.printf("%nNon-repeating character is '%s'",
 				firstNonRepeatedCharacter2(str));
 	}
 	
@@ -21,9 +23,7 @@ public class FirstNonRepeatedCharacter {
 		
 		Map<Character, Integer> chars = new LinkedHashMap<>();
 		
-		//for (int i = 0; i < str.length(); i++) {
 		for (char ch : str.toCharArray()) {
-			//char ch = str.charAt(i);
 			chars.compute(ch, (k, v) -> (v == null) ? 1 : ++v);
 		}
 		for (Map.Entry<Character, Integer> entry : chars.entrySet()) {

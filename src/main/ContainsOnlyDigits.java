@@ -1,14 +1,18 @@
+package main;
+
 import org.apache.commons.lang3.StringUtils;
 
 public class ContainsOnlyDigits {
 	
+	public static final String IS_NUMBER = "%n'%s' is number? %s";
+	
 	public static void main(String[] args) {
 		String[] str = {"123456", "123abc", "Hello Word!!!"};
-		System.out.printf("\n'%s' is number? %s", str[0], onlyDigits1(str[0]));
-		System.out.printf("\n'%s' is number? %s", str[1], onlyDigits2(str[1]));
-		System.out.printf("\n'%s' is number? %s", str[2], onlyDigits3(str[2]));
-		System.out.printf("\n'%s' is number? %s", str[0], onlyDigits4(str[0]));
-		System.out.printf("\n'%s' is number? %s", str[1], onlyDigits4(str[1]));
+		System.out.printf(IS_NUMBER, str[0], onlyDigits1(str[0]));
+		System.out.printf(IS_NUMBER, str[1], onlyDigits2(str[1]));
+		System.out.printf(IS_NUMBER, str[2], onlyDigits3(str[2]));
+		System.out.printf(IS_NUMBER, str[0], onlyDigits4(str[0]));
+		System.out.printf(IS_NUMBER, str[1], onlyDigits4(str[1]));
 	}
 	
 	/* *
@@ -28,7 +32,7 @@ public class ContainsOnlyDigits {
 	}
 	
 	public static boolean onlyDigits3(String str) {
-		return str.matches("[0-9]+");
+		return str.matches("\\d+");
 	}
 	
 	public static boolean onlyDigits4(String str) {

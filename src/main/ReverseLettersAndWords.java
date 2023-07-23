@@ -1,3 +1,5 @@
+package main;
+
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
@@ -10,11 +12,11 @@ public class ReverseLettersAndWords {
 	public static void main(String[] args) {
 		String str = "Hello World!!!";
 		String reversed1 = reverseWords(str);
-		System.out.printf("\nReversing 1: %s", reversed1);
+		System.out.printf("%nReversing 1: %s", reversed1);
 		String reversed2 = reverseWords2(str);
-		System.out.printf("\nReversing 2: %s", reversed2);
+		System.out.printf("%nReversing 2: %s", reversed2);
 		String reversed3 = reverseWords3(str);
-		System.out.printf("\nReversing 3: %s", reversed3);
+		System.out.printf("%nReversing 3: %s", reversed3);
 	}
 	
 	private static final String WHITESPACE = " ";
