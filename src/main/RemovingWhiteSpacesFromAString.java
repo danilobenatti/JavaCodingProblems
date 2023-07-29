@@ -8,7 +8,7 @@ public class RemovingWhiteSpacesFromAString {
 	
 	public static void main(String[] args) {
 		System.out.printf("%nResult1: %s", removeWhiteSpace1(TEXT));
-		System.out.printf("%nResult2: %s", removeWhiteSpace1(TEXT));
+		System.out.printf("%nResult2: %s", removeWhiteSpace2(TEXT));
 	}
 	
 	/* *
