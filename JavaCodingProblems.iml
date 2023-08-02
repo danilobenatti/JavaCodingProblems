@@ -11,4 +11,7 @@
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="commons.beanutils" level="project" />
   </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="3926c65d-0046-4e1e-9415-14b4a1f4adbc" />
+  </component>
 </module>
