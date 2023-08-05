@@ -7,7 +7,7 @@ public class ContainsOnlyDigits {
 	public static final String IS_NUMBER = "%n'%s' is number? %s";
 	
 	public static void main(String[] args) {
-		String[] str = {"123456", "123abc", "Hello Word!!!"};
+		String[] str = { "123456", "123abc", "Hello Word!!!" };
 		System.out.printf(IS_NUMBER, str[0], onlyDigits1(str[0]));
 		System.out.printf(IS_NUMBER, str[1], onlyDigits2(str[1]));
 		System.out.printf(IS_NUMBER, str[2], onlyDigits3(str[2]));

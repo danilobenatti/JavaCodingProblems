@@ -10,16 +10,16 @@ public class FirstNonRepeatedCharacter {
 	public static void main(String[] args) {
 		String str = "Hello Hello World!!!";
 		System.out.printf("%nNon-repeating character is '%s'",
-				firstNonRepeatedCharacter(str));
+			firstNonRepeatedCharacter1(str));
 		System.out.printf("%nNon-repeating character is '%s'",
-				firstNonRepeatedCharacter2(str));
+			firstNonRepeatedCharacter2(str));
 	}
 	
 	/* *
 	 * Chapter 1: Exercise 2 - Finding the first no-repeated character
 	 * Write a program that finding the first no-repeated character
 	 * */
-	public static Character firstNonRepeatedCharacter(String str) {
+	public static Character firstNonRepeatedCharacter1(String str) {
 		
 		Map<Character, Integer> chars = new LinkedHashMap<>();
 		
@@ -35,10 +35,12 @@ public class FirstNonRepeatedCharacter {
 	}
 	
 	public static String firstNonRepeatedCharacter2(String str) {
-		LinkedHashMap<Integer, Long> chs = str.codePoints().boxed()
-				.collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()));
+		LinkedHashMap<Integer, Long> chs = str.codePoints().boxed().collect(
+			Collectors.groupingBy(Function.identity(), LinkedHashMap::new,
+				Collectors.counting()));
 		Integer cp = chs.entrySet().stream().filter(e -> e.getValue() == 1L)
-				.findFirst().map(Map.Entry::getKey).orElse((int) Character.MIN_VALUE);
+			.findFirst().map(Map.Entry::getKey)
+			.orElse((int) Character.MIN_VALUE);
 		return String.valueOf(Character.toChars(cp));
 	}
 }

@@ -9,8 +9,8 @@ import java.util.stream.Collectors;
 public class JoinByDelimiter {
 	
 	public static void main(String[] args) {
-		String[] values1 = {"Peter", "John", "Mary"};
-		String[] values2 = {"Apple", "Grape", "Orange", "Pear", "Pineapple"};
+		String[] values1 = { "Peter", "John", "Mary" };
+		String[] values2 = { "Apple", "Grape", "Orange", "Pear", "Pineapple" };
 		System.out.printf("%nResult1: %s", joinByDelimiter1(';', values1));
 		System.out.printf("%nResult2: %s", joinByDelimiter2(';', values1));
 		System.out.printf("%nResult3: %s", joinByDelimiter3(';', values2));
@@ -39,7 +39,7 @@ public class JoinByDelimiter {
 	
 	public static String joinByDelimiter3(char delimiter, String... args) {
 		return Arrays.stream(args, 0, args.length)
-				.collect(Collectors.joining(String.valueOf(delimiter)));
+			.collect(Collectors.joining(String.valueOf(delimiter)));
 	}
 	
 	public static String joinByDelimiter4(char delimiter, String... args) {

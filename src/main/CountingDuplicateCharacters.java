@@ -19,7 +19,8 @@ public class CountingDuplicateCharacters {
 	 * Chapter 1: Exercise 1 - Counting duplicate characters
 	 * Write a program that counts duplicate characters from a given string
 	 * */
-	public static Map<Character, Integer> countDuplicateCharacters1(String str) {
+	public static Map<Character, Integer> countDuplicateCharacters1(
+		String str) {
 		
 		Map<Character, Integer> result = new HashMap<>();
 		
@@ -32,7 +33,7 @@ public class CountingDuplicateCharacters {
 	
 	public static Map<Character, Long> countDuplicateCharacters2(String str) {
 		return str.chars().mapToObj(c -> (char) c)
-				.collect(Collectors.groupingBy(c -> c, Collectors.counting()));
+			.collect(Collectors.groupingBy(c -> c, Collectors.counting()));
 	}
 	
 	public static Map<String, Integer> countDuplicateCharacters3(String str) {
@@ -65,7 +66,8 @@ public class CountingDuplicateCharacters {
 	}
 	
 	public static Map<String, Long> countDuplicateCharacters5(String str) {
-		return str.codePoints().mapToObj(c -> String.valueOf(Character.toChars(c)))
-				.collect(Collectors.groupingBy(c -> c, Collectors.counting()));
+		return str.codePoints()
+			.mapToObj(c -> String.valueOf(Character.toChars(c)))
+			.collect(Collectors.groupingBy(c -> c, Collectors.counting()));
 	}
 }

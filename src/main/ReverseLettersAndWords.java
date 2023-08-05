@@ -20,6 +20,7 @@ public class ReverseLettersAndWords {
 	}
 	
 	private static final String WHITESPACE = " ";
+	
 	public static String reverseWords(String str) {
 		
 		String[] words = str.split(WHITESPACE);
@@ -38,8 +39,9 @@ public class ReverseLettersAndWords {
 	private static final Pattern PATTERN = Pattern.compile(" +");
 	
 	public static String reverseWords2(String str) {
-		return PATTERN.splitAsStream(str).map(w -> new StringBuilder(w)
-				.reverse()).collect(Collectors.joining(" "));
+		return PATTERN.splitAsStream(str)
+			.map(w -> new StringBuilder(w).reverse())
+			.collect(Collectors.joining(" "));
 	}
 	
 	public static String reverseWords3(String str) {

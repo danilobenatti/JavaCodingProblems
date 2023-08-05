@@ -12,8 +12,8 @@ import static java.util.stream.Collectors.partitioningBy;
 
 public class CountingVowelsAndConsonants {
 	
-	private static final Set<Character> ALL_VOWELS =
-			new HashSet<>(Arrays.asList('a', 'e', 'i', 'o', 'u'));
+	private static final Set<Character> ALL_VOWELS = new HashSet<>(
+		Arrays.asList('a', 'e', 'i', 'o', 'u'));
 	
 	public static void main(String[] args) {
 		String str = "Hello World!!!";
@@ -47,16 +47,16 @@ public class CountingVowelsAndConsonants {
 	public static Pair<Long, Long> counting2(String str) {
 		str = str.toLowerCase();
 		return Pair.of(
-				str.chars().filter(c -> ALL_VOWELS.contains((char) c)).count(),
-				str.chars().filter(c -> !ALL_VOWELS.contains((char) c))
-						.filter(ch -> (ch >= 'a' && ch <= 'z')).count());
+			str.chars().filter(c -> ALL_VOWELS.contains((char) c)).count(),
+			str.chars().filter(c -> !ALL_VOWELS.contains((char) c))
+				.filter(ch -> (ch >= 'a' && ch <= 'z')).count());
 	}
 	
 	public static Pair<Long, Long> counting3(String str) {
 		str = str.toLowerCase();
-		Map<Boolean, Long> result =
-				str.chars().mapToObj(c -> (char) c).filter(ch -> (ch >= 'a' && ch <= 'z'))
-						.collect(partitioningBy(ALL_VOWELS::contains, counting()));
+		Map<Boolean, Long> result = str.chars().mapToObj(c -> (char) c)
+			.filter(ch -> (ch >= 'a' && ch <= 'z'))
+			.collect(partitioningBy(ALL_VOWELS::contains, counting()));
 		return Pair.of(result.get(true), result.get(false));
 	}
 }

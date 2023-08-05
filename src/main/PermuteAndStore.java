@@ -20,6 +20,7 @@ public class PermuteAndStore {
 		
 		System.out.printf("%n%s", permuteAndStore2("TEST")); // using LIST
 	}
+	
 	/* *
 	 * Chapter 1: Exercise 10- Generating all permutations
 	 * */
