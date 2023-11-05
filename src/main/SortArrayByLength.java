@@ -24,45 +24,48 @@ public class SortArrayByLength {
 	 * Chapter 1: Exercise 15 - Sorting an array of strings by length
 	 * */
 	public enum Sort {
-		ASC, DESC;
+		ASC, DESC
 	}
 	
-	public static void sortArrayByLength1(String[] strs, Sort direction) {
+	public static void sortArrayByLength1(String[] strings, Sort direction) {
 		if (direction.equals(Sort.ASC)) {
-			Arrays.sort(strs, Comparator.comparingInt(String::length));
+			Arrays.sort(strings, Comparator.comparingInt(String::length));
 		} else {
-			Arrays.sort(strs,
+			Arrays.sort(strings,
 				(String s1, String s2) -> (-1) * Integer.compare(s1.length(),
 					s2.length()));
 		}
 	}
 	
-	public static void sortArrayByLength2(String[] strs, Sort direction) {
+	public static void sortArrayByLength2(String[] strings, Sort direction) {
 		if (direction.equals(Sort.ASC)) {
-			Arrays.sort(strs, Comparator.comparing(String::length));
+			Arrays.sort(strings, Comparator.comparing(String::length));
 		} else {
-			Arrays.sort(strs, Comparator.comparing(String::length).reversed());
+			Arrays.sort(strings,
+				Comparator.comparing(String::length).reversed());
 		}
 	}
 	
-	public static String[] sortArrayByLength3(String[] strs, Sort direction) {
+	public static String[] sortArrayByLength3(String[] strings,
+		Sort direction) {
 		if (direction.equals(Sort.ASC)) {
-			return Arrays.stream(strs)
+			return Arrays.stream(strings)
 				.sorted(Comparator.comparingInt(String::length))
 				.toArray(String[]::new);
 		} else {
-			return Arrays.stream(strs)
+			return Arrays.stream(strings)
 				.sorted(Comparator.comparingInt(String::length).reversed())
 				.toArray(String[]::new);
 		}
 	}
 	
-	public static String[] sortArrayByLength4(String[] strs, Sort direction) {
+	public static String[] sortArrayByLength4(String[] strings,
+		Sort direction) {
 		return switch (direction) {
-			case ASC -> Arrays.stream(strs)
+			case ASC -> Arrays.stream(strings)
 				.sorted(Comparator.comparingInt(String::length))
 				.toArray(String[]::new);
-			case DESC -> Arrays.stream(strs)
+			case DESC -> Arrays.stream(strings)
 				.sorted(Comparator.comparingInt(String::length).reversed())
 				.toArray(String[]::new);
 		};
