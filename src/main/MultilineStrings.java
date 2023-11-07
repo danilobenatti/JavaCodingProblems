@@ -23,9 +23,9 @@ public class MultilineStrings {
 			"and that you're never too young to think big.");
 		System.out.println(str2);
 		
-		String str3 = StringUtils.<String>join("My high school," + LF,
-			"the Illinois Mathematics and Science Academy," + LF,
-			"showed me that anything is possible" + LF,
+		String str3 = StringUtils.<String>join("My high school,", LF,
+			"the Illinois Mathematics and Science Academy,", LF,
+			"showed me that anything is possible", LF,
 			"and that you're never too young to think big!");
 		System.out.println(str3);
 		
